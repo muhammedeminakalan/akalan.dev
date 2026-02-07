@@ -14,8 +14,8 @@ const ProfileImage = ({ className, ...props }: ProfileImageProps) => (
   <div className={cn('h-52 w-52 md:h-72 md:w-72', className)} {...props}>
     <div className="bg-accent relative h-full w-full overflow-hidden rounded-2xl grayscale transition duration-1000 hover:grayscale-0">
       <Image
-        src="/muhammetakalan.jpg"
-        alt="@muhammetakalan"
+        src="/muhammedeminakalan.jpg"
+        alt="@muhammedeminakalan"
         width={288}
         height={288}
       />
@@ -33,9 +33,9 @@ export default function Hero() {
           <div className="flex-1 md:text-left">
             <ProfileImage className="mb-8 block md:hidden" />
             <h2 className="mb-4 text-4xl font-bold tracking-tight">
-              Muhammet Emin Akalan
+              Muhammed Emin Akalan
               <span className="text-muted-foreground block text-lg font-medium">
-                Full Stack Developer
+                Full Stack Engineer
               </span>
             </h2>
             <p className="text-muted-foreground mb-6">

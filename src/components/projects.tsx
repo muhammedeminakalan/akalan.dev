@@ -1,5 +1,3 @@
-'use client'
-
 import Image from 'next/image'
 
 import { CopyLinkIcon, GithubIcon } from '@hugeicons/core-free-icons'
@@ -7,11 +5,6 @@ import { HugeiconsIcon } from '@hugeicons/react'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem
-} from '@/components/ui/carousel'
 
 interface ProjectCardProps {
   title: string
@@ -22,24 +15,23 @@ interface ProjectCardProps {
   githubUrl?: string
 }
 
-const ProjectCard = ({
+function ProjectCard({
   title,
   description,
   image,
   technologies,
   liveUrl,
   githubUrl
-}: ProjectCardProps) => {
+}: ProjectCardProps) {
   return (
-    <div className="flex w-full flex-col overflow-hidden rounded-xl border grayscale transition duration-1000 select-none hover:grayscale-0">
-      <div className="relative aspect-square h-48">
-        <Image
-          src={image}
-          alt={title}
-          className="bg-accent object-cover"
-          fill
-        />
-      </div>
+    <div className="flex w-full flex-col overflow-hidden rounded-xl border">
+      <Image
+        src={image}
+        alt={title}
+        className="bg-accent h-[192px] object-cover grayscale transition duration-1000 hover:grayscale-0"
+        height={192}
+        width={370}
+      />
 
       <div className="flex flex-1 flex-col p-6">
         <h3 className="mb-2 text-xl font-semibold">{title}</h3>
@@ -79,69 +71,18 @@ const ProjectCard = ({
 export default function Projects() {
   const projects = [
     {
-      title: 'Darulhikmet',
-      description: 'İslami içeriklere odaklanan kapsamlı bir web platformu.',
-      image: '/darulhikmet.svg',
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-      liveUrl: 'https://darulhikmet.com',
-      githubUrl: 'https://github.com/darulhikmet'
-    },
-    {
-      title: 'Boykot',
-      description:
-        'Marka boykot sorgulamak için geliştirilmiş bir Android uygulama.',
-      image: '/boycott.svg',
-      technologies: ['Kotlin', 'Firebase'],
-      githubUrl: 'https://github.com/muhammetakalan/boycott'
-    },
-    {
-      title: 'Watch App',
-      description:
-        'Kişisel film arşivimi yönetmek için geliştirdiğim bir Android uygulama.',
-      image: '/watch-app.svg',
-      technologies: ['React Native', 'Firebase', 'TMDB API'],
-      liveUrl:
-        'https://github.com/muhammetakalan/watch-app/releases/tag/v1.0.0',
-      githubUrl: 'https://github.com/muhammetakalan/watch-app'
-    },
-    {
-      title: 'TrekBlends',
-      description:
-        'Kişiye özel seyahat planları oluşturmak için geliştirilmiş bir web uygulaması.',
-      image: '/trekblends.svg',
+      title: 'İşletmem',
+      description: 'İşletmenizi dijitale taşıyan bir web uygulaması.',
+      image: '/isletmem.svg',
       technologies: [
         'Next.js',
         'TypeScript',
         'Tailwind CSS',
         'shadcn/ui',
-        'MDX',
-        'SEO'
+        'Monorepo',
+        'Docker'
       ],
-      liveUrl: 'https://trekblends.com'
-    },
-    {
-      title: 'Movie App',
-      description: 'Filmleri keşfetmenizi sağlayan bir web uygulaması.',
-      image: '/movie-app.svg',
-      technologies: ['Next.js', 'Module CSS', 'TMDB API'],
-      liveUrl: 'https://movie-app-tmoviedb.netlify.app',
-      githubUrl: 'https://github.com/muhammetakalan/movie-app'
-    },
-    {
-      title: 'Cilper',
-      description:
-        'Veri dosyalarını tarayıcıda SQL ile analiz etmenizi sağlayan bir web uygulaması.',
-      image: '/cilper.svg',
-      technologies: [
-        'Vite.js',
-        'Tailwind CSS',
-        'shadcn/ui',
-        'DuckDB',
-        'SQL',
-        'WASM',
-        'PWA'
-      ],
-      liveUrl: 'https://cilper.com'
+      liveUrl: 'https://isletmem.app'
     },
     {
       title: 'Parapin',
@@ -157,28 +98,6 @@ export default function Projects() {
       ],
       liveUrl:
         'https://play.google.com/store/apps/details?id=com.tahrir.glowguys'
-    },
-    {
-      title: 'İşletmem.app',
-      description: 'İşletmenizi dijitale taşıyan bir web uygulaması.',
-      image: '/isletmem.svg',
-      technologies: [
-        'Next.js',
-        'TypeScript',
-        'Tailwind CSS',
-        'shadcn/ui',
-        'Monorepo',
-        'Docker'
-      ],
-      liveUrl: 'https://isletmem.app'
-    },
-    {
-      title: 'Dijital Kumbara',
-      description:
-        'Temassız ödeme ile bağış toplamayı kolaylaştıran bir mobil uygulama.',
-      image: '/dijitalkumbara.svg',
-      technologies: ['Kotlin'],
-      liveUrl: 'https://dijitalkumbara.com/product/dk'
     }
   ]
 
@@ -196,15 +115,11 @@ export default function Projects() {
         </p>
       </div>
 
-      <Carousel opts={{ dragFree: true }} className="mx-auto max-w-3xl">
-        <CarouselContent>
-          {projects.map((project, index) => (
-            <CarouselItem key={index} className="flex lg:basis-1/2">
-              <ProjectCard key={index} {...project} />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel>
+      <div className="mx-auto grid max-w-3xl gap-6 md:grid-cols-2">
+        {projects.map((project, index) => (
+          <ProjectCard key={index} {...project} />
+        ))}
+      </div>
     </section>
   )
 }

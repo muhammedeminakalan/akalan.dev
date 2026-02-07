@@ -57,9 +57,28 @@ const ExperienceItem = ({
 export default function Experience() {
   const experiences = [
     {
+      title: 'Co-Founder',
+      company: 'İşletmem',
+      period: '2025 - Devam Ediyor',
+      description:
+        'Kurucu ortağı olduğum işletmemde CTO olarak görev alıyorum. Modern web teknolojileri ile ölçeklenebilir uygulamalar geliştiriyorum.',
+      technologies: [
+        'Next.js',
+        'Monorepo',
+        'TypeScript',
+        'PostgreSQL',
+        'Redis',
+        'MiniO',
+        'Tailwind CSS',
+        'Docker',
+        'VPS',
+        'CI/CD'
+      ]
+    },
+    {
       title: 'Full Stack Developer',
       company: 'AtomUp',
-      period: '2024 - 2025',
+      period: '2024 - 2026',
       description:
         "İstanbul merkezli AtomUp'ta full stack geliştirici olarak çalıştım. Modern web teknolojileri ile ölçeklenebilir uygulamalar geliştirdim.",
       technologies: ['React', 'Node.js', 'TypeScript', 'Next.js', 'PostgreSQL']

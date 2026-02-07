@@ -1,10 +1,6 @@
 import Link from 'next/link'
 
-import {
-  GithubIcon,
-  LinkedinIcon,
-  NewTwitterIcon
-} from '@hugeicons/core-free-icons'
+import { GithubIcon } from '@hugeicons/core-free-icons'
 import { HugeiconsIcon } from '@hugeicons/react'
 
 import { Separator } from '@/components/ui/separator'
@@ -13,15 +9,13 @@ import ParticleImage from './particle-image'
 
 export default function Footer() {
   const socialLinks = [
-    { icon: GithubIcon, href: 'https://github.com/muhammetakalan' },
-    { icon: LinkedinIcon, href: 'https://tr.linkedin.com/in/muhammetakalan' },
-    { icon: NewTwitterIcon, href: 'https://x.com/muhammetakalann' }
+    { icon: GithubIcon, href: 'https://github.com/muhammedeminakalan' }
   ]
 
   return (
     <footer className="mt-20 px-6">
       <div className="mx-auto max-w-3xl">
-        <div className="my-24 flex h-46 justify-center mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
+        <div className="my-24 flex h-46 justify-center mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] invert dark:invert-0">
           <ParticleImage imageSrc="/logo.png" canvasHeight={184} />
         </div>
         <Separator />

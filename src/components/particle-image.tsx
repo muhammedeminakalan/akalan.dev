@@ -10,11 +10,11 @@ interface ParticleImageProps {
   canvasHeight?: number
 }
 
-const ParticleImage = ({
+export default function ParticleImage({
   imageSrc,
   canvasWidth,
   canvasHeight
-}: ParticleImageProps) => {
+}: ParticleImageProps) {
   const imageParticleRef = useRef(null)
 
   useEffect(() => {
@@ -37,5 +37,3 @@ const ParticleImage = ({
     />
   )
 }
-
-export default ParticleImage

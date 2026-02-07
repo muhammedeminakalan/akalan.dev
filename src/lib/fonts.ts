@@ -1,15 +1,11 @@
-import { Geist, Geist_Mono } from 'next/font/google'
+import { GeistMono } from 'geist/font/mono'
+import { GeistPixelSquare } from 'geist/font/pixel'
+import { GeistSans } from 'geist/font/sans'
 
 import { cn } from '@/lib/utils'
 
-const fontSans = Geist({
-  variable: '--font-sans',
-  subsets: ['latin']
-})
+const fontSans = GeistSans.variable
+const fontMono = GeistMono.variable
+const fontPixelSquare = GeistPixelSquare.variable
 
-const fontMono = Geist_Mono({
-  variable: '--font-mono',
-  subsets: ['latin']
-})
-
-export const fontVariables = cn(fontSans.variable, fontMono.variable)
+export const fontVariables = cn(fontSans, fontMono, fontPixelSquare)

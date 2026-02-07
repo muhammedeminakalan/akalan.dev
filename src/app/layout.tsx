@@ -2,13 +2,13 @@ import { Metadata } from 'next'
 
 import Footer from '@/components/footer'
 import Navbar from '@/components/navbar'
-import { ThemeProvider } from '@/components/theme-provider'
+import ThemeProvider from '@/components/theme-provider'
 import { fontVariables } from '@/lib/fonts'
 
 import '@/styles/globals.css'
 
 export const metadata: Metadata = {
-  title: 'Muhammet Emin Akalan'
+  title: 'Muhammed Emin Akalan'
 }
 
 interface RootLayoutProps {
@@ -17,8 +17,8 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html suppressHydrationWarning>
-      <body className={fontVariables}>
+    <html suppressHydrationWarning className={fontVariables}>
+      <body>
         <ThemeProvider>
           <Navbar />
           {children}
