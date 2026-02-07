@@ -13,10 +13,11 @@ export default function ModeToggle() {
 
   return (
     <Button
+      aria-label="Temayı değiştir"
       variant="outline"
       size="icon"
-      className="rounded-full"
       onClick={() => toggleTheme()}
+      className="rounded-full"
     >
       <svg
         width="24"

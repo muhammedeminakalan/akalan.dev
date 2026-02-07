@@ -8,7 +8,9 @@ import { fontVariables } from '@/lib/fonts'
 import '@/styles/globals.css'
 
 export const metadata: Metadata = {
-  title: 'Muhammed Emin Akalan'
+  title: 'Muhammed Emin Akalan',
+  description:
+    'Muhammed Emin Akalan - Full Stack Engineer. Modern web teknolojileri ile kullanıcı odaklı, ölçeklenebilir uygulamalar geliştiren yazılım mühendisi.'
 }
 
 interface RootLayoutProps {
@@ -17,11 +19,11 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html suppressHydrationWarning className={fontVariables}>
+    <html lang="tr" suppressHydrationWarning className={fontVariables}>
       <body>
         <ThemeProvider>
           <Navbar />
-          {children}
+          <main>{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

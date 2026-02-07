@@ -14,10 +14,12 @@ const config = {
     '',
     '^[./]'
   ],
+  attributeGroups: ['$DEFAULT', 'className'],
   plugins: [
-    '@ianvs/prettier-plugin-sort-imports',
     'prettier-plugin-packagejson',
-    'prettier-plugin-tailwindcss'
+    '@ianvs/prettier-plugin-sort-imports',
+    'prettier-plugin-tailwindcss',
+    '@xeonlink/prettier-plugin-organize-attributes'
   ]
 }
 

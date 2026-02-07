@@ -5,16 +5,10 @@ import React, { useEffect, useRef } from 'react'
 import { inspiraImageParticles } from '@/lib/inspira-image-particles'
 
 interface ParticleImageProps {
-  imageSrc: string
-  canvasWidth?: number
-  canvasHeight?: number
+  src: string
 }
 
-export default function ParticleImage({
-  imageSrc,
-  canvasWidth,
-  canvasHeight
-}: ParticleImageProps) {
+export default function ParticleImage({ src }: ParticleImageProps) {
   const imageParticleRef = useRef(null)
 
   useEffect(() => {
@@ -27,13 +21,6 @@ export default function ParticleImage({
 
   return (
     // eslint-disable-next-line
-    <img
-      ref={imageParticleRef}
-      src={imageSrc}
-      className="hidden"
-      data-width={canvasWidth}
-      data-height={canvasHeight}
-      alt="logo"
-    />
+    <img ref={imageParticleRef} src={src} alt="Logo" className="hidden" />
   )
 }

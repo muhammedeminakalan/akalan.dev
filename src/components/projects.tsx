@@ -28,9 +28,9 @@ function ProjectCard({
       <Image
         src={image}
         alt={title}
-        className="bg-accent h-[192px] object-cover grayscale transition duration-1000 hover:grayscale-0"
         height={192}
         width={370}
+        className="bg-accent h-48 object-cover grayscale transition duration-1000 hover:grayscale-0"
       />
 
       <div className="flex flex-1 flex-col p-6">
