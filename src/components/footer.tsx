@@ -16,7 +16,11 @@ export default function Footer() {
     <footer className="mt-20 px-6">
       <div className="mx-auto max-w-3xl">
         <div className="my-24 flex h-46 justify-center mask-[linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] invert dark:invert-0">
-          <ParticleImage imageSrc="/logo.png" canvasHeight={184} />
+          <ParticleImage
+            imageSrc="/logo.png"
+            canvasWidth={184}
+            canvasHeight={184}
+          />
         </div>
         <Separator />
         <div className="flex flex-col-reverse items-center justify-between gap-x-2 gap-y-5 px-6 py-6 sm:flex-row xl:px-0">
